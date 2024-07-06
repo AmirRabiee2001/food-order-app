@@ -1,0 +1,166 @@
+// Meal Items
+.meal-item {
+  flex: 0 0 33.33%;
+  display: flex;
+  flex-direction: column;
+  padding: 2rem;
+  border: 1px solid var(--color-grey-light-3);
+  gap: 2rem;
+  &__head {
+    display: flex;
+    flex-direction: row-reverse;
+    justify-content: space-between;
+  }
+  &__info {
+    margin-top: 2rem;
+    p {
+      font-weight: bold;
+      font-size: 1.2rem;
+      margin-top: 2rem;
+      text-align: center;
+    }
+  }
+  &__title {
+    display: inline-block;
+    font-size: 1.7rem;
+  }
+  &__img {
+    border-radius: 10px;
+    height: 15rem;
+    // box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+  }
+  &__form {
+    display: flex;
+    align-items: center;
+    flex-direction: row-reverse;
+    justify-content: space-between;
+  }
+  &__btn {
+    font-family: inherit;
+    width: 15rem;
+    border: none;
+    height: 3rem;
+    padding: 0.2rem 2rem;
+    border-radius: 100px;
+    background-color: #fff;
+    color: var(--color-primary);
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    transition: all 0.2s ease;
+  }
+  &__btn:active {
+    transform: translateY(-0.2rem);
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
+  }
+  &__custom-num {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 1.4rem;
+    & > *:not(input) {
+      cursor: pointer;
+    }
+    &__input {
+      border: none;
+      background-color: #fff;
+      text-align: center;
+      outline: none;
+      font-family: inherit;
+      &::-webkit-outer-spin-button,
+      &::-webkit-inner-spin-button {
+        -webkit-appearance: none;
+        margin: 0;
+      }
+    }
+  }
+  &__price {
+    font-size: 1.3rem;
+    font-weight: bold;
+  }
+}
+
+.meal-view {
+  direction: rtl;
+  max-height: 90vh;
+  overflow-y: scroll;
+  width: 70rem;
+  padding: 2rem;
+  &__header {
+    display: flex;
+    margin: 2rem auto;
+    gap: 1rem;
+    & img {
+      width: 18rem;
+      border-radius: 10px;
+      margin-left: 1rem;
+    }
+  }
+  &__info {
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+    gap: 1rem;
+    & h3 {
+      color: var(--color-grey-dark-1);
+      font-size: 1.5rem;
+    }
+  }
+  &__rating {
+    &::before {
+      content: "\2605";
+      color: gold;
+      margin-left: 0.5rem;
+    }
+    border: 1px solid var(--color-grey-light-3);
+    padding: 0.2rem 1rem;
+    border-radius: 5px;
+    font-size: 1.2rem;
+    align-self: start;
+    font-weight: bold;
+  }
+  &__ingredients {
+    font-size: 1.2rem;
+  }
+  &__comments {
+    & h3 {
+      font-size: 1.8rem;
+    }
+  }
+  &__comment {
+    display: flex;
+    padding: 1rem;
+    &:not(:last-child) {
+      margin-bottom: 1rem;
+    }
+    border-bottom: 1px solid var(--color-grey-light-2);
+    &--text {
+      flex: 1;
+      & p:first-child {
+        font-size: 1.7rem;
+      }
+    }
+    &--info {
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+      font-size: 1.4rem;
+      margin-left: 5rem;
+      & span:first-child {
+        font-weight: bold;
+      }
+    }
+    &--response {
+      border: 1px solid var(--color-grey-light-3);
+      padding: 1rem;
+      border-radius: 5px;
+      margin-top: 1rem;
+      font-size: 1.2rem;
+      &::before {
+        content: "پاسخ مدیر رستوران";
+        display: block;
+        color: var(--color-secondary);
+        font-weight: bold;
+        margin-bottom: 1rem;
+      }
+    }
+  }
+}
